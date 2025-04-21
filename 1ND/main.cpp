@@ -153,25 +153,24 @@ void findPrimeNum() {
     long long num;
 
     while ((cin >> num) && num != 0) {
-        int count = 0;
+        bool isPrime = true;
 
         if (num <= 1)
-            cout << "FALSE" << endl;
+            isPrime = false;
         else {
 
             for (int i = 2; i * i <= num; i++) {
                 if (num % i == 0) {
-                    count++;
+                    isPrime = false;
+                    break;
                 }
             }
-
-            if (count > 2) {
-                cout << "FALSE" << endl;
-            }
-
-            else
-                cout << "TRUE" << endl;
-
         }
+
+        if (isPrime) {
+            cout << "TRUE" << endl;
+        }
+        else
+            cout << "FALSE" << endl;
     }
 }
