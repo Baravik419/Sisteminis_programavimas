@@ -55,6 +55,12 @@ build CMakeFiles/Sisteminis_programavimas.dir/1ND/main.cpp.o: CXX_COMPILER__Sist
   OBJECT_DIR = CMakeFiles/Sisteminis_programavimas.dir
   OBJECT_FILE_DIR = CMakeFiles/Sisteminis_programavimas.dir/1ND
 
+build CMakeFiles/Sisteminis_programavimas.dir/2ND/main.cpp.o: CXX_COMPILER__Sisteminis_programavimas_unscanned_Debug /Users/ervinborkovski/CLionProjects/Sisteminis_programavimas/2ND/main.cpp || cmake_object_order_depends_target_Sisteminis_programavimas
+  DEP_FILE = CMakeFiles/Sisteminis_programavimas.dir/2ND/main.cpp.o.d
+  FLAGS = -g -std=gnu++2b -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -mmacosx-version-min=15.3 -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/Sisteminis_programavimas.dir
+  OBJECT_FILE_DIR = CMakeFiles/Sisteminis_programavimas.dir/2ND
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Sisteminis_programavimas
@@ -63,7 +69,7 @@ build CMakeFiles/Sisteminis_programavimas.dir/1ND/main.cpp.o: CXX_COMPILER__Sist
 #############################################
 # Link the executable Sisteminis_programavimas
 
-build Sisteminis_programavimas: CXX_EXECUTABLE_LINKER__Sisteminis_programavimas_Debug CMakeFiles/Sisteminis_programavimas.dir/1ND/main.cpp.o
+build Sisteminis_programavimas: CXX_EXECUTABLE_LINKER__Sisteminis_programavimas_Debug CMakeFiles/Sisteminis_programavimas.dir/1ND/main.cpp.o CMakeFiles/Sisteminis_programavimas.dir/2ND/main.cpp.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.4.sdk -mmacosx-version-min=15.3
   OBJECT_DIR = CMakeFiles/Sisteminis_programavimas.dir
   POST_BUILD = :
