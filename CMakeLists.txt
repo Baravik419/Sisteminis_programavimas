@@ -4,4 +4,5 @@ project(Sisteminis_programavimas)
 set(CMAKE_CXX_STANDARD 23)
 
 add_executable(Sisteminis_programavimas 1ND/main.cpp
-        2ND/main.cpp)
+        2ND/main.cpp
+        3ND/main.cpp)

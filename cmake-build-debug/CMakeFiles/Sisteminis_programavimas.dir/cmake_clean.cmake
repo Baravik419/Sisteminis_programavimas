@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Sisteminis_programavimas.dir/1ND/main.cpp.obj.d"
   "CMakeFiles/Sisteminis_programavimas.dir/2ND/main.cpp.obj"
   "CMakeFiles/Sisteminis_programavimas.dir/2ND/main.cpp.obj.d"
+  "CMakeFiles/Sisteminis_programavimas.dir/3ND/main.cpp.obj"
+  "CMakeFiles/Sisteminis_programavimas.dir/3ND/main.cpp.obj.d"
   "Sisteminis_programavimas.exe"
   "Sisteminis_programavimas.exe.manifest"
   "Sisteminis_programavimas.pdb"

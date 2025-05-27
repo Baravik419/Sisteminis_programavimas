@@ -84,12 +84,12 @@ clean: CMakeFiles/Sisteminis_programavimas.dir/clean
 CMakeFiles/Sisteminis_programavimas.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Sisteminis_programavimas.dir\build.make CMakeFiles/Sisteminis_programavimas.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Sisteminis_programavimas.dir\build.make CMakeFiles/Sisteminis_programavimas.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\erwin\CLionProjects\Sisteminis_programavimas\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target Sisteminis_programavimas"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\erwin\CLionProjects\Sisteminis_programavimas\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4 "Built target Sisteminis_programavimas"
 .PHONY : CMakeFiles/Sisteminis_programavimas.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Sisteminis_programavimas.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\erwin\CLionProjects\Sisteminis_programavimas\cmake-build-debug\CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\erwin\CLionProjects\Sisteminis_programavimas\cmake-build-debug\CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/Sisteminis_programavimas.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\erwin\CLionProjects\Sisteminis_programavimas\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/Sisteminis_programavimas.dir/rule
@@ -101,7 +101,7 @@ Sisteminis_programavimas: CMakeFiles/Sisteminis_programavimas.dir/rule
 # codegen rule for target.
 CMakeFiles/Sisteminis_programavimas.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Sisteminis_programavimas.dir\build.make CMakeFiles/Sisteminis_programavimas.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\erwin\CLionProjects\Sisteminis_programavimas\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Finished codegen for target Sisteminis_programavimas"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\erwin\CLionProjects\Sisteminis_programavimas\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target Sisteminis_programavimas"
 .PHONY : CMakeFiles/Sisteminis_programavimas.dir/codegen
 
 # clean rule for target.

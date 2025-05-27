@@ -176,6 +176,30 @@ Sisteminis_programavimas/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Sisteminis_programavimas.dir\build.make CMakeFiles/Sisteminis_programavimas.dir/2ND/main.cpp.s
 .PHONY : 2ND/main.cpp.s
 
+3ND/main.obj: 3ND/main.cpp.obj
+.PHONY : 3ND/main.obj
+
+# target to build an object file
+3ND/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Sisteminis_programavimas.dir\build.make CMakeFiles/Sisteminis_programavimas.dir/3ND/main.cpp.obj
+.PHONY : 3ND/main.cpp.obj
+
+3ND/main.i: 3ND/main.cpp.i
+.PHONY : 3ND/main.i
+
+# target to preprocess a source file
+3ND/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Sisteminis_programavimas.dir\build.make CMakeFiles/Sisteminis_programavimas.dir/3ND/main.cpp.i
+.PHONY : 3ND/main.cpp.i
+
+3ND/main.s: 3ND/main.cpp.s
+.PHONY : 3ND/main.s
+
+# target to generate assembly for a file
+3ND/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Sisteminis_programavimas.dir\build.make CMakeFiles/Sisteminis_programavimas.dir/3ND/main.cpp.s
+.PHONY : 3ND/main.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -191,6 +215,9 @@ help:
 	@echo ... 2ND/main.obj
 	@echo ... 2ND/main.i
 	@echo ... 2ND/main.s
+	@echo ... 3ND/main.obj
+	@echo ... 3ND/main.i
+	@echo ... 3ND/main.s
 .PHONY : help
 
 
