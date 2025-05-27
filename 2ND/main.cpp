@@ -89,18 +89,20 @@ void WriteID3v1Tag(const wstring& filePath) {
     getline(cin >> ws, title);
     cout << "Input artist (max 30): ";
     getline(cin, artist);
-    cout << "Input almbum (max 30): ";
+    cout << "Input album (max 30): ";
     getline(cin, album);
     cout << "Input year of the release (exact 4): ";
     getline(cin, year);
 
-    ID3v1Tag tag = {};
-    memcpy(tag.tag, "TAG", 3);
-    strncpy(tag.title, title.c_str(), sizeof(tag.title));
-    strncpy(tag.artist, artist.c_str(), sizeof(tag.artist));
-    strncpy(tag.album, album.c_str(), sizeof(tag.album));
-    strncpy(tag.year, year.c_str(), sizeof(tag.year));
-    tag.genre = 0;
+    unique_ptr<ID3v1Tag> tag(new ID3v1Tag());
+    memset(tag.get(), 0, sizeof(ID3v1Tag)); // užpildome nuliais
+
+    memcpy(tag->tag, "TAG", 3);
+    strncpy(tag->title, title.c_str(), sizeof(tag->title) - 1);
+    strncpy(tag->artist, artist.c_str(), sizeof(tag->artist) - 1);
+    strncpy(tag->album, album.c_str(), sizeof(tag->album) - 1);
+    strncpy(tag->year, year.c_str(), sizeof(tag->year) - 1);
+    tag->genre = 0;
 
     HANDLE file = CreateFileW(filePath.c_str(), GENERIC_WRITE, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
     if (file == INVALID_HANDLE_VALUE) {
@@ -111,10 +113,10 @@ void WriteID3v1Tag(const wstring& filePath) {
     SetFilePointer(file, -128, NULL, FILE_END);
 
     DWORD bytesWritten;
-    if (!WriteFile(file, &tag, sizeof(tag), &bytesWritten, NULL) || bytesWritten != sizeof(tag)) {
-        wcerr << L"Unsuccessful writting of the tag." << endl;
+    if (!WriteFile(file, tag.get(), sizeof(ID3v1Tag), &bytesWritten, NULL) || bytesWritten != sizeof(ID3v1Tag)) {
+        wcerr << L"Unsuccessful writing of the tag." << endl;
     } else {
-        wcout << L"Successful new ID3v1 tag" << endl;
+        wcout << L"Successfully wrote new ID3v1 tag." << endl;
     }
 
     CloseHandle(file);
