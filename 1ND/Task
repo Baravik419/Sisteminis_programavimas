@@ -1,13 +1,11 @@
-1
-2.333
-2.25
-15000
-
-1. Formatting the entered number with printf.
-2. Displaying error messages using Windows API.
-3. Displaying system information.
-4. BASE64 computation for "Secure Programming" text.
-5. Finding prime numbers.
-2.33
-2.2
-1.50e+04
+Santrauka
+Parašykite programą, kuri dirbtu konsolės (angl. console) režimu.
+Reikalavimai
+Startavus programai pasirodo tekstas, nurodantis programos meniu:
+Formatting the entered number with printf.
+Displaying error messages using Windows API.
+Displaying system information.
+BASE64 computation for "Secure Programming" text.
+Finding prime numbers.
+Vertinimas
+Kiekviena užduotis bus vertinama dviem (2) balais. Viso dešimt (10) balų.
