@@ -41,7 +41,6 @@ void SearchForMP3(const std::wstring& catalogue) {
 
 void ReadID3v1Tag(const wstring& filePath) {
     HANDLE file = CreateFileW(filePath.c_str(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
-
     if (file == INVALID_HANDLE_VALUE) {
         wcerr << L"Unsuccessful file opening: " << filePath << endl;
         return;
@@ -51,26 +50,34 @@ void ReadID3v1Tag(const wstring& filePath) {
     GetFileSizeEx(file, &fileSize);
 
     if (fileSize.QuadPart < 128) {
-        wcerr << L"File too small, to have such tag." << endl;
+        wcerr << L"File too small to have a tag." << endl;
         CloseHandle(file);
         return;
     }
 
     SetFilePointer(file, -128, NULL, FILE_END);
 
-    ID3v1Tag tag;
+    void* buffer = VirtualAlloc(NULL, sizeof(ID3v1Tag), MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
+    if (!buffer) {
+        wcerr << L"Memory allocation failed." << endl;
+        CloseHandle(file);
+        return;
+    }
+
     DWORD bytesRead;
-    if (ReadFile(file, &tag, sizeof(tag), &bytesRead, NULL) && bytesRead == sizeof(tag)) {
-        if (strncmp(tag.tag, "TAG", 3) == 0) {
-            cout << "Title: " << string(tag.title, 30) << endl;
-            cout << "Artis: " << string(tag.artist, 30) << endl;
-            cout << "Album: " << string(tag.album, 30) << endl;
-            cout << "Year: " << string(tag.year, 4) << endl;
+    if (ReadFile(file, buffer, sizeof(ID3v1Tag), &bytesRead, NULL) && bytesRead == sizeof(ID3v1Tag)) {
+        ID3v1Tag* tag = reinterpret_cast<ID3v1Tag*>(buffer);
+        if (strncmp(tag->tag, "TAG", 3) == 0) {
+            cout << "Title: " << string(tag->title, 30) << endl;
+            cout << "Artist: " << string(tag->artist, 30) << endl;
+            cout << "Album: " << string(tag->album, 30) << endl;
+            cout << "Year: " << string(tag->year, 4) << endl;
         } else {
             cout << "ID3v1 tag not found." << endl;
         }
     }
 
+    VirtualFree(buffer, 0, MEM_RELEASE);
     CloseHandle(file);
 }
 
